@@ -24,12 +24,17 @@ main{
     border: none;
     color: #0A3871;
     margin-top: 90px;
-    text-transform: lowercase;
 }
 ::placeholder{color: #0A3871;}
   .texto:focus{
     outline: none;
   }
+
+.mostrar{
+    position: fixed;
+    width: 400px;
+    height: 944px;
+}
 
 .resultado{
     background: #FFFFFF;
@@ -41,7 +46,6 @@ main{
     margin-left: 98px;
     margin-top: 20px;
     padding-left: 20px;
-    position: fixed;
 }
 
 .resultado:focus{
@@ -84,9 +88,45 @@ main{
     position: absolute;
     margin-left: 108px;
     margin-top: 402px;
+    position: relative;
+    box-sizing: border-box;
 }
 
-.informacion {
+.informacion{
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+
+.informacion__icono{
+    padding: 8px;
+    width: 16px;
+    height: 16px;
+}
+.informacion__texto{
     color: #495057;
-    font-size: 18px;
+    font-size: 12px;
+    padding: 8px;
+}
+
+@media screen and (max-width:768px){
+    main {
+        flex-direction: column;
+    }
+
+    .resultado{
+        background-image: none;
+    }
+
+}
+
+@media screen and (max-width:375px){
+    main {
+        flex-direction: column;
+    }
+
+    .resultado{
+        background-image: none;
+    }
+
 }
