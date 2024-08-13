@@ -20,6 +20,7 @@ function botonEncriptar(){
     if(validarTexto(textoAEncriptar)){
         resultado.value = encriptar(textoAEncriptar);
         mensaje.value = "";
+        ocultarImagen();
         console.log(textoAEncriptar);
     }else{
         alert("El texto debe incluir solo letras minúsculas")
@@ -32,10 +33,19 @@ function botonDesencriptar(){
     if(validarTexto(textoADesencriptar)){
         resultado.value = desencriptar(textoADesencriptar);
         mensaje.value = "";
+        ocultarImagen();
     }else{
         alert("El texto debe incluir solo letras minúsculas")
     }
     
+}
+
+function botonCopiar(){
+    if(resultado.value !== ""){
+        copiar();
+    }else{
+        alert("No hay texto para copiar")
+    }
 }
 
 function encriptar(texto){
@@ -59,11 +69,10 @@ function desencriptar(texto){
     return texto
 }
 
+function copiar(){
+    navigator.clipboard.writeText(resultado.value)
+}
 
-for (const [key, value] of llavesDeEncriptacion.entries()) {
-    console.log(`${key}: ${value}`);
-  }
-
-// En caso de que sean consonates no modifican su valor final.
-// En caso de que sean vocales se debe reemplazar con la llave de encriptación correspondiente.
-// Una vez recorrido todo el texto se debe devolver con la encriptación correspondiente.
+function ocultarImagen(){
+    resultado.style.backgroundImage = "none";
+}
