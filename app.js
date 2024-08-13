@@ -30,8 +30,8 @@ function botonEncriptar(){
 function botonDesencriptar(){
     let textoADesencriptar = mensaje.value;
     if(validarTexto(textoADesencriptar)){
-        textoADesencriptar = desencriptar(textoADesencriptar);
-        console.log(textoADesencriptar);
+        resultado.value = desencriptar(textoADesencriptar);
+        mensaje.value = "";
     }else{
         alert("El texto debe incluir solo letras minúsculas")
     }
