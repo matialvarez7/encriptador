@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header></header>
+    <header>
+        <img src="/assets/Logo.png" alt="Logo de Alura" class="logo">
+    </header>
     <main>
-        <div>
-            <input type="text" id="texto" placeholder="Ingrese una palabra o texto">
-        </div>
-        <div>
-            <button onclick="botonEncriptar()">Encriptar</button>
-            <button onclick="botonDesencriptar()">Desencriptar</button>
-        </div>
-        <div>
-            <textarea name="" id="resultado"></textarea>
-        </div>
+        <section>
+            <div>
+                <input type="text" id="texto" placeholder="Ingrese una palabra o texto" class="texto">
+            </div>
+            <div>
+                <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
+            </div>
+            <div class="botones">
+                <button class="boton-encriptar" onclick="botonEncriptar()">Encriptar</button>
+                <button class="boton-desencriptar" onclick="botonDesencriptar()">Desencriptar</button>
+            </div>
+        </section>
+        <section>
+            <div>
+                <textarea class="resultado" name="" id="resultado"></textarea>
+            </div>
+            <div>
+                <button class="boton-copiar">Copiar</button>
+            </div>
+        </section>
     </main>
     <footer></footer>
     <script src="app.js"></script>
